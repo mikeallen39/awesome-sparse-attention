@@ -53,7 +53,7 @@ Why this structure:
 
 ## Long-Context LLMs
 
-### Training-Free / Inference-Time
+### Training-Free
 
 | Title | Main Idea | Time / Venue | Domain |
 |---|---|---|---|
@@ -89,7 +89,7 @@ Why this structure:
 
 ## Diffusion / Video / Image Generation
 
-### Training-Free Sparse Attention for DiTs
+### Training-Free
 
 | Title | Main Idea | Time / Venue | Domain |
 |---|---|---|---|
@@ -112,7 +112,7 @@ Why this structure:
 | [LiteAttention](https://arxiv.org/abs/2511.11062) | Exploits temporal coherence of sparse patterns across denoising steps. | arXiv 2025.11 | video diffusion, temporal sparse, kernel |
 | [Rectified SpaAttn](https://arxiv.org/abs/2511.19835) | Rectifies bias induced by sparse attention using implicit full-attention references. | arXiv 2025.11 | video diffusion, rectified sparse, Triton |
 
-### Trainable / Native Sparse Attention for DiTs
+### Trainable / Native Sparse
 
 | Title | Main Idea | Time / Venue | Domain |
 |---|---|---|---|
