@@ -86,6 +86,8 @@ Why this structure:
 | [Elastic Attention](https://arxiv.org/abs/2601.17367) | Learns to route heads between sparse and full computation at test time. | arXiv 2026.01 | LLM, adaptive routing, sparse-full hybrid |
 | [vAttention: Verified Sparse Attention](https://arxiv.org/abs/2510.05688) | Combines top-k and sampling with explicit approximation guarantees. | arXiv 2025.10 | LLM, verified sparse, decoding |
 | [UniSparse: A Unified Sparse Attention via Multi-Granularity Compression](https://arxiv.org/abs/2512.14082) | Composite-token framework for unified sparse attention across tasks and modalities. | arXiv 2025.12 | LLM, multi-granularity, unified sparse |
+| [DeepSeek-V3](https://arxiv.org/abs/2501.12948) | Introduces DeepSeek Sparse Attention (DSA), a production-oriented sparse attention with dynamic KV compression for efficient long-context attention. | NeurIPS 2025 | LLM, long-context, native sparse |
+| [NSA: Native Sparse Attention](https://arxiv.org/abs/2502.08928) | Hardware-aligned native sparse attention with optimized sparse pattern for training and inference. | arXiv 2025.02 | LLM, native sparse, hardware-aware |
 
 ## Diffusion / Video / Image Generation
 
