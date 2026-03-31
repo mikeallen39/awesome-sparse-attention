@@ -89,41 +89,54 @@ Why this structure:
 
 ## Diffusion / Video / Image Generation
 
-### General Sparse Attention for DiTs
+### Training-Free Sparse Attention for DiTs
 
 | Title | Main Idea | Time / Venue | Domain |
 |---|---|---|---|
 | [SpargeAttention](https://arxiv.org/abs/2502.18137) | Training-free sparse attention that targets language, image, and video generation models. | ICML 2025 | diffusion, generation, training-free |
 | [Re-ttention: Ultra Sparse Visual Generation via Attention Statistical Reshape](https://arxiv.org/abs/2505.22918) | Uses historical softmax statistics to support very high sparsity in visual generation. | arXiv 2025.05 | visual generation, sparse attention, ultra-sparse |
-| [SparseDiT](https://arxiv.org/abs/2412.06028) | Spatial-temporal token sparsification for efficient diffusion transformers. | NeurIPS 2025 | diffusion, token sparsification, DiT |
-| [DiffCR: Layer- and Timestep-Adaptive Differentiable Token Compression Ratios](https://arxiv.org/abs/2412.16822) | Learns token compression ratios across layers and denoising timesteps. | CVPR 2025 | diffusion, token compression, adaptive routing |
 | [HilbertA](https://arxiv.org/abs/2509.26538) | Reorders image tokens along Hilbert curves for 2D-aware and GPU-efficient sparse attention. | arXiv 2025.09 | image generation, sparse attention, token reordering |
 | [PAROAttention](https://arxiv.org/abs/2506.16054) | Pattern-aware token reordering for sparse and quantized attention in visual generation. | arXiv 2025.06 | visual generation, sparse attention, quantization |
 | [PISA: Piecewise Sparse Attention Is Wiser for Efficient Diffusion Transformers](https://arxiv.org/abs/2602.01077) | Exact-or-approximate sparse attention that keeps critical blocks exact and approximates the rest. | arXiv 2026.02 | diffusion, block-sparse, approximation |
-| [Shiva-DiT](https://arxiv.org/abs/2602.05605) | Differentiable top-k token selection with static budgets for hardware-friendly DiT pruning. | arXiv 2026.02 | diffusion, trainable sparse, token pruning |
-| [SpargeAttention2](https://arxiv.org/abs/2602.13515) | Trainable sparse attention with hybrid top-k/top-p masking and distillation fine-tuning. | arXiv 2026.02 | diffusion, trainable sparse, hybrid masking |
-
-### Video Generation
-
-| Title | Main Idea | Time / Venue | Domain |
-|---|---|---|---|
 | [Sparse VideoGen](https://arxiv.org/abs/2502.01776) | Classifies heads into spatial or temporal sparse patterns for training-free acceleration. | arXiv 2025.04 | video diffusion, training-free, spatiotemporal sparse |
 | [Fast Video Generation with Sliding Tile Attention](https://arxiv.org/abs/2502.04507) | Hardware-aware sliding tile attention for efficient 3D local attention. | ICML 2025 | video diffusion, local sparse, kernel-aware |
 | [DraftAttention](https://arxiv.org/abs/2505.14708) | Low-resolution draft attention guides sparse full-resolution attention. | arXiv 2025.05 | video diffusion, guided sparse, GPU-friendly |
 | [GRAT: Grouping First, Attending Smartly](https://arxiv.org/abs/2505.14687) | Groups neighboring tokens and shares attendable regions for training-free acceleration. | arXiv 2025.05 | video diffusion, structured sparse, training-free |
 | [RainFusion](https://arxiv.org/abs/2505.21036) | Online adaptive recognition of spatial, temporal, and textural sparse patterns. | arXiv 2025.06 | video diffusion, adaptive sparse, online profiling |
-| [VORTA](https://arxiv.org/abs/2505.18809) | Routing framework that replaces dense 3D attention with specialized sparse attention variants. | NeurIPS 2025 | video diffusion, routing sparse attention |
 | [Sparse-vDiT](https://arxiv.org/abs/2506.03065) | Offline sparse diffusion search with per-pattern sparse kernels for video DiTs. | arXiv 2025.06 | video diffusion, sparse search, pattern-aware |
 | [Astraea](https://arxiv.org/abs/2506.05096) | Token-wise acceleration framework for video diffusion transformers. | arXiv 2025.09 | video diffusion, token-wise acceleration |
 | [FG-Attn](https://arxiv.org/abs/2509.16518) | Fine-grained sparsity beyond coarse block skipping for diffusion transformers. | arXiv 2025.09 | video diffusion, fine-grained sparse attention |
 | [Radial Attention](https://arxiv.org/abs/2506.19852) | Static sparse attention with decaying compute density based on spatiotemporal distance. | NeurIPS 2025 | video diffusion, static sparse, subquadratic |
-| [VMoBA](https://arxiv.org/abs/2506.23858) | Mixture-of-block attention adapted to video diffusion with recurrent block partitioning. | arXiv 2025.06 | video diffusion, block-sparse, native sparse |
 | [Compact Attention](https://arxiv.org/abs/2508.12969) | Adaptive tile grouping and temporal windows for structured video sparsity. | arXiv 2025.08 | video diffusion, structured sparse, hardware-aware |
 | [Sparse VideoGen2](https://arxiv.org/abs/2505.18875) | Semantic-aware permutation to cluster important tokens contiguously for GPUs. | arXiv 2025.10 | video diffusion, permutation, semantic sparse |
 | [LiteAttention](https://arxiv.org/abs/2511.11062) | Exploits temporal coherence of sparse patterns across denoising steps. | arXiv 2025.11 | video diffusion, temporal sparse, kernel |
 | [Rectified SpaAttn](https://arxiv.org/abs/2511.19835) | Rectifies bias induced by sparse attention using implicit full-attention references. | arXiv 2025.11 | video diffusion, rectified sparse, Triton |
+
+### Trainable / Native Sparse Attention for DiTs
+
+| Title | Main Idea | Time / Venue | Domain |
+|---|---|---|---|
+| [SparseDiT](https://arxiv.org/abs/2412.06028) | Spatial-temporal token sparsification for efficient diffusion transformers. | NeurIPS 2025 | diffusion, token sparsification, DiT |
+| [DiffCR: Layer- and Timestep-Adaptive Differentiable Token Compression Ratios](https://arxiv.org/abs/2412.16822) | Learns token compression ratios across layers and denoising timesteps. | CVPR 2025 | diffusion, token compression, adaptive routing |
+| [Faster Video Diffusion with Trainable Sparse Attention](https://arxiv.org/abs/2505.13389) | Introduces VSA, a trainable hardware-efficient sparse attention that replaces full attention in both training and inference. | arXiv 2025.05 | video diffusion, trainable sparse, hardware-aware |
+| [VORTA](https://arxiv.org/abs/2505.18809) | Routing framework that replaces dense 3D attention with specialized sparse attention variants. | NeurIPS 2025 | video diffusion, trainable sparse, routing |
+| [VMoBA](https://arxiv.org/abs/2506.23858) | Mixture-of-block attention adapted to video diffusion with recurrent block partitioning and native training support. | arXiv 2025.06 | video diffusion, native sparse, block-sparse |
+| [Bidirectional Sparse Attention for Faster Video Diffusion Training](https://arxiv.org/abs/2509.01085) | Dynamically sparsifies both queries and key-value blocks for faster video diffusion training. | arXiv 2025.09 | video diffusion, trainable sparse, bidirectional sparse |
+| [Shiva-DiT](https://arxiv.org/abs/2602.05605) | Differentiable top-k token selection with static budgets for hardware-friendly DiT pruning. | arXiv 2026.02 | diffusion, trainable sparse, token pruning |
+| [SpargeAttention2](https://arxiv.org/abs/2602.13515) | Trainable sparse attention with hybrid top-k/top-p masking and distillation fine-tuning. | arXiv 2026.02 | diffusion, trainable sparse, hybrid masking |
+
+### Hybrid Sparse-Linear / Structured Attention
+
+| Title | Main Idea | Time / Venue | Domain |
+|---|---|---|---|
+| [SLA: Beyond Sparsity in Diffusion Transformers via Fine-Tunable Sparse-Linear Attention](https://arxiv.org/abs/2509.24006) | Sparse-linear decomposition of attention with lightweight fine-tuning. | arXiv 2025.09 | diffusion, sparse-linear, hybrid attention |
+| [Attention Surgery: An Efficient Recipe to Linearize Your Video Diffusion Transformer](https://arxiv.org/abs/2509.24899) | Distills pretrained video diffusion models into linear or hybrid attention variants. | arXiv 2025.11 | video diffusion, hybrid attention, linearization |
+| [ReHyAt: Recurrent Hybrid Attention for Video Diffusion Transformers](https://arxiv.org/abs/2601.04342) | Hybrid softmax-linear attention with recurrent chunk-wise formulation. | arXiv 2026.01 | video diffusion, hybrid attention, linear memory |
+| [SALAD: Achieve High-Sparsity Attention via Efficient Linear Attention Tuning for Video Diffusion Transformer](https://arxiv.org/abs/2601.16515) | Adds a lightweight linear branch to support higher sparse ratios with limited fine-tuning. | arXiv 2026.01 | video diffusion, sparse-linear, trainable |
+| [SLA2: Sparse-Linear Attention with Learnable Routing and QAT](https://arxiv.org/abs/2602.12675) | Learnable routing and quantization-aware tuning for stronger sparse-linear attention. | arXiv 2026.02 | video diffusion, sparse-linear, routing |
 | [VMonarch](https://arxiv.org/abs/2601.22275) | Structured attention with Monarch matrices for sparse spatiotemporal patterns. | arXiv 2026.01 | video diffusion, structured attention, Monarch |
 | [MonarchRT](https://arxiv.org/abs/2602.12271) | Real-time video generation with expressive structured sparse attention. | arXiv 2026.02 | video generation, structured sparse, real-time |
+| [Switch Attention: Towards Dynamic and Fine-grained Hybrid Transformers](https://arxiv.org/abs/2603.26380) | Dynamically switches between full attention and sliding-window attention. | arXiv 2026.03 | efficient attention, hybrid attention, dynamic routing |
 
 ### Pipelines / Serving / Unified Acceleration
 
@@ -137,17 +150,6 @@ Why this structure:
 | [RainFusion2.0](https://arxiv.org/abs/2512.24086) | Hardware-efficient sparse attention with low-overhead pattern prediction for video and image generation. | arXiv 2025.12 | diffusion, sparse attention, hardware-aware |
 | [StreamDiffusionV2](https://arxiv.org/abs/2511.07399) | Serving-oriented streaming system for interactive video generation with rolling KV cache and pipeline orchestration. | arXiv 2025.11 | video generation, serving, KV-cache |
 | [Jenga: Training-Free Efficient Video Generation via Dynamic Token Carving](https://arxiv.org/abs/2505.16864) | Combines dynamic attention carving with progressive resolution generation. | NeurIPS 2025 | video diffusion, dynamic token carving, pipeline |
-
-### Hybrid Sparse-Linear / Structured Attention
-
-| Title | Main Idea | Time / Venue | Domain |
-|---|---|---|---|
-| [SLA: Beyond Sparsity in Diffusion Transformers via Fine-Tunable Sparse-Linear Attention](https://arxiv.org/abs/2509.24006) | Sparse-linear decomposition of attention with lightweight fine-tuning. | arXiv 2025.09 | diffusion, sparse-linear, hybrid attention |
-| [Attention Surgery: An Efficient Recipe to Linearize Your Video Diffusion Transformer](https://arxiv.org/abs/2509.24899) | Distills pretrained video diffusion models into linear or hybrid attention variants. | arXiv 2025.11 | video diffusion, hybrid attention, linearization |
-| [ReHyAt: Recurrent Hybrid Attention for Video Diffusion Transformers](https://arxiv.org/abs/2601.04342) | Hybrid softmax-linear attention with recurrent chunk-wise formulation. | arXiv 2026.01 | video diffusion, hybrid attention, linear memory |
-| [SALAD: Achieve High-Sparsity Attention via Efficient Linear Attention Tuning for Video Diffusion Transformer](https://arxiv.org/abs/2601.16515) | Adds a lightweight linear branch to support higher sparse ratios with limited fine-tuning. | arXiv 2026.01 | video diffusion, sparse-linear, trainable |
-| [SLA2: Sparse-Linear Attention with Learnable Routing and QAT](https://arxiv.org/abs/2602.12675) | Learnable routing and quantization-aware tuning for stronger sparse-linear attention. | arXiv 2026.02 | video diffusion, sparse-linear, routing |
-| [Switch Attention: Towards Dynamic and Fine-grained Hybrid Transformers](https://arxiv.org/abs/2603.26380) | Dynamically switches between full attention and sliding-window attention. | arXiv 2026.03 | efficient attention, hybrid attention, dynamic routing |
 
 ## Theory / Analysis
 
