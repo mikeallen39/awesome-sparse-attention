@@ -4,7 +4,7 @@
 
 > A curated list of papers and resources on sparse attention, with a small related coverage of linear and hybrid efficient attention.
 
-Last updated: **2026-03-31**
+Last updated: **2026-09-07**
 
 ## How This List Is Organized
 
@@ -70,6 +70,7 @@ Why this structure:
 | [SlimInfer](https://arxiv.org/abs/2508.06447) | Dynamic hidden-state token pruning with asynchronous KV management for long-context inference. | arXiv 2025.08 | LLM, token pruning, KV-cache |
 | [SparseD](https://arxiv.org/abs/2509.24014) | Sparse attention for diffusion language models with head-specific patterns reused across denoising steps. | arXiv 2025.09 | diffusion LLM, sparse attention, denoising |
 | [Sparse-dLLM](https://arxiv.org/abs/2508.02558) | Dynamic cache eviction and sparse attention for diffusion LLMs. | arXiv 2025.08 | diffusion LLM, KV-cache eviction, sparse attention |
+| [BA-Att: Efficient Long-Context Modeling in Diffusion Language Models via Block Approximate Sparse Attention](https://arxiv.org/abs/2605.19726) | Selects informative KV blocks in a compact pre-downsampled attention space without relying on fixed positional sampling priors. | arXiv 2026.05 | diffusion LLM, long-context, block-sparse |
 | [LongCat ZigZag Attention](https://arxiv.org/abs/2512.23966) | Zigzag sparse attention for efficient context scaling up to million-token settings. | arXiv 2025.12 | LLM, long-context, sparse attention |
 | [Token Sparse Attention](https://arxiv.org/abs/2602.03216) | Interleaved token selection inside attention, allowing tokens to be reconsidered later. | arXiv 2026.02 | LLM, token-sparse, dynamic |
 | [Prism](https://arxiv.org/abs/2602.08426) | Spectral-aware block selection that addresses RoPE pooling blind spots. | arXiv 2026.02 | LLM, block-sparse, RoPE-aware |
@@ -114,6 +115,17 @@ Why this structure:
 | [Sparse VideoGen2](https://arxiv.org/abs/2505.18875) | Semantic-aware permutation to cluster important tokens contiguously for GPUs. | arXiv 2025.10 | video diffusion, permutation, semantic sparse |
 | [LiteAttention](https://arxiv.org/abs/2511.11062) | Exploits temporal coherence of sparse patterns across denoising steps. | arXiv 2025.11 | video diffusion, temporal sparse, kernel |
 | [Rectified SpaAttn](https://arxiv.org/abs/2511.19835) | Rectifies bias induced by sparse attention using implicit full-attention references. | arXiv 2025.11 | video diffusion, rectified sparse, Triton |
+| [AdaSpa: Training-free and Adaptive Sparse Attention for Efficient Long Video Generation](https://arxiv.org/abs/2502.21079) | Uses head-adaptive hierarchical block sparsity with cached online search across denoising steps. | ICCV 2025 | video diffusion, training-free, adaptive sparse |
+| [PSA: Pyramid Sparse Attention for Efficient Video Understanding and Generation](https://arxiv.org/abs/2512.04025) | Replaces binary block dropping with multi-level pooled KV representations and query-dependent resolution allocation. | arXiv 2025.12 | video, pyramid sparse, multi-resolution KV |
+| [MOD-DiT: Mixture of Distributions Matters](https://arxiv.org/abs/2601.11641) | Predicts dynamic sparse attention through a sampling-free mixture-of-distributions formulation. | arXiv 2026.01 | video diffusion, dynamic sparse, sampling-free |
+| [SVOO: Training-Free Sparse Attention via Offline Profiling and Online Bidirectional Co-Clustering](https://arxiv.org/abs/2603.18636) | Combines layer-wise offline sparsity profiles with online query-key co-clustering. | arXiv 2026.03 | video diffusion, training-free, co-clustering |
+| [PASA: Precision-Allocated Sparse Attention](https://arxiv.org/abs/2604.12219) | Allocates exact-computation budgets by denoising-trajectory curvature to reduce flicker under sparse routing. | arXiv 2026.04 | video diffusion, training-free, dynamic budgeting |
+| [AdaCluster](https://arxiv.org/abs/2604.18348) | Adaptively clusters queries and keys with geometry-specific similarity metrics for sparse attention. | arXiv 2026.04 | video diffusion, training-free, clustering |
+| [DFSAttn](https://arxiv.org/abs/2605.23445) | Uses recall-guided dynamic, fine-grained block sparsification for high-sparsity video generation. | arXiv 2026.05 | video diffusion, training-free, fine-grained sparse |
+| [ScalingAttention](https://arxiv.org/abs/2606.23019) | Extracts stable, prompt-agnostic sparse topologies from model weights offline and controls sparsity at runtime. | arXiv 2026.06 | video diffusion, training-free, intrinsic topology |
+| [HyperVAttention](https://arxiv.org/abs/2607.03012) | Couples local spatiotemporal clustering with hardware-aware regularization and sparse kernels. | arXiv 2026.07 | video diffusion, training-free, clustering, kernel |
+| [Sol-Attn](https://arxiv.org/abs/2607.24027) | Performs low-overhead on-the-fly routing and compensates information from skipped attention blocks. | arXiv 2026.07 | video diffusion, training-free, dynamic sparse |
+| [Token Radius Attention](https://arxiv.org/abs/2608.02504) | Maps per-query entropy to token-specific budgets and temporally decayed attention radii without explicit key ranking. | arXiv 2026.08 | video diffusion, training-free, token-adaptive sparse |
 
 ### Trainable / Native Sparse
 
@@ -127,6 +139,11 @@ Why this structure:
 | [Bidirectional Sparse Attention for Faster Video Diffusion Training](https://arxiv.org/abs/2509.01085) | Dynamically sparsifies both queries and key-value blocks for faster video diffusion training. | arXiv 2025.09 | video diffusion, trainable sparse, bidirectional sparse |
 | [Shiva-DiT](https://arxiv.org/abs/2602.05605) | Differentiable top-k token selection with static budgets for hardware-friendly DiT pruning. | arXiv 2026.02 | diffusion, trainable sparse, token pruning |
 | [SpargeAttention2](https://arxiv.org/abs/2602.13515) | Trainable sparse attention with hybrid top-k/top-p masking and distillation fine-tuning. | arXiv 2026.02 | diffusion, trainable sparse, hybrid masking |
+| [DSV: Exploiting Dynamic Sparsity to Accelerate Large-Scale Video DiT Training](https://arxiv.org/abs/2502.07590) | Uses low-rank query-key approximation, custom sparse kernels, and sparsity-aware context parallelism for training. | arXiv 2025.02 | video diffusion, training, dynamic sparse, systems |
+| [MoGA: Mixture-of-Groups Attention](https://arxiv.org/abs/2510.18692) | Learns a token-level semantic router for sparse long-range interactions without coarse block estimation. | arXiv 2025.10 | long video, trainable sparse, token routing |
+| [LLSA: Trainable Log-linear Sparse Attention](https://arxiv.org/abs/2512.16615) | Uses hierarchical token representations to reduce both block selection and attention from quadratic to log-linear cost. | arXiv 2025.12 | diffusion, trainable sparse, hierarchical routing |
+| [Veda: Scalable Video Diffusion via Distilled Sparse Attention](https://arxiv.org/abs/2605.30325) | Distills full-attention tile geometry into head-aware sparse masks and executes them with tile-skipping kernels. | arXiv 2026.05 | video diffusion, distilled sparse, tile kernel |
+| [EchoAttention](https://arxiv.org/abs/2505.24179) | Routes heads between sparse token-pair computation and a calibrated frame-block approximation learned by distillation. | ICML 2026 | video diffusion, distilled routing, sparse attention |
 
 ### Hybrid Sparse-Linear / Structured Attention
 
@@ -140,6 +157,8 @@ Why this structure:
 | [VMonarch](https://arxiv.org/abs/2601.22275) | Structured attention with Monarch matrices for sparse spatiotemporal patterns. | arXiv 2026.01 | video diffusion, structured attention, Monarch |
 | [MonarchRT](https://arxiv.org/abs/2602.12271) | Real-time video generation with expressive structured sparse attention. | arXiv 2026.02 | video generation, structured sparse, real-time |
 | [Switch Attention: Towards Dynamic and Fine-grained Hybrid Transformers](https://arxiv.org/abs/2603.26380) | Dynamically switches between full attention and sliding-window attention. | arXiv 2026.03 | efficient attention, hybrid attention, dynamic routing |
+| [MonarchAttention](https://arxiv.org/abs/2505.18698) | Converts softmax attention to a hardware-aware Monarch-matrix approximation without additional training. | arXiv 2025.05 | structured attention, Monarch, zero-shot conversion |
+| [SVG-EAR](https://arxiv.org/abs/2603.08982) | Adds parameter-free centroid-based linear compensation for blocks skipped by sparse video attention. | arXiv 2026.03 | video diffusion, sparse-linear, error-aware routing |
 
 ### Pipelines / Serving / Unified Acceleration
 
